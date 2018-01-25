@@ -3,9 +3,7 @@ title: mini-programming
 date: "2017-07-13T12:00:00.121Z"
 ---
 
-一、环境搭建踩进的坑
-
-1. 小程序的基础开发结构
+## 小程序的基础开发结构
 ```
 miniProgram/
 ├─ app.wxss     // 小程序公共样式表
@@ -17,10 +15,9 @@ miniProgram/
 │   │     ├── index.wxml  // 主页面
 │   │     ├── index.wxss  // 页面样式表
 │   │     └── index.json  // 页面配置
-
 ```
 
-2. 小程序提供的API
+## 小程序提供的API
 
 ```js
 // 小程序的API都是长这个模样的，初次见到觉得这些API可以忍受
@@ -67,35 +64,37 @@ let login = () => {
 }
 ```
 
-3. 引入第三方库经历的神坑
+## 引入第三方库经历的神坑
 
-# 我无法容忍自己继续乖乖地按照他的API进行开发 所以决定来一发promise，封装一下。
- 
+我无法容忍自己继续乖乖地按照他的API进行开发 所以决定来一发promise，封装一下。
+
 【官方】
-# [官方文档 - ES6 API 支持情况]：支持 Promise
-# [更新日志 0.11.112200]：同客户端保持一致，移除 Promise，开发者需要自行引入兼容库
+[官方文档 - ES6 API 支持情况]：支持 `Promise`
+[更新日志 0.11.112200]：同客户端保持一致，移除 `Promise`，开发者需要自行引入兼容库
 
 【本人】
-# Google一会：小程序支持Promise => 需要自行引入
-# 更新日志中只搜到一次Promise被移除的信息，没有重新加上的更新日志 => 文档里ES6支持情况中还写支持Promise我不知道什么情况，大概没更新
-# 总之安全起见，引入第三方Promise
-
+Google一会：小程序支持`Promise` => 需要自行引入
+更新日志中只搜到一次`Promise`被移除的信息，没有重新加上的更新日志 => 文档里ES6支持情况中还写支持`Promise`我不知道什么情况，大概没更新
+总之安全起见，引入第三方`Promise`
+```
 npm install bluebird
 const Promise = require("bluebird")
-# [result] 2个严重问题
-# 1 Network中看到，node_modules下的所有js文件都被加载了。早就超过了小程序的1M大小限制。而我本意只是想引入一个bluebird而已呀
-# 2 而且bluebird也没有引入成功 => 只能傻瓜式写全文件的相对路径 require("node_modules/bluebird/dist/promise.js")
-文档中[模块化]有说明: 小程序目前不支持直接引入 node_modules , 开发者需要使用到 node_modules 时候建议拷贝出相关的代码到小程序的目录中。
-
+```
+[result] 2个严重问题
+1 Network中看到，`node_modules`下的所有js文件都被加载了。早就超过了小程序的1M大小限制。而我本意只是想引入一个bluebird而已呀
+2 而且`bluebird`也没有引入成功 => 只能傻瓜式写全文件的相对路径 require("node_modules/bluebird/dist/promise.js")
+文档中[模块化]有说明: 小程序目前不支持直接引入 node_modules ,开发者需要使用到 node_modules 时候建议拷贝出相关的代码到小程序的目录中。
+```
 mkdir lib
 cp -rf node_modules/bluebird/dist/promise.js lib
 rm -rf node_modules
-# [result] 1个严重问题
-# 1 在安卓真机下会报错 => bluebird中有对dom进行操作
+```
+[result] 1个严重问题
+1 在安卓真机下会报错 => bluebird中有对dom进行操作
 文档中[逻辑层]有说明: 由于框架并非运行在浏览器中，所以 JavaScript 在 web 中一些能力都无法使用，如 document，window 等
 
 
-4. 吾辈终于使用上了Promise
+## 吾辈终于使用上了Promise
 
 let Promise = require('../lib/promise')
 class Tools {
@@ -125,28 +124,28 @@ T.wxPromise(wx.getStorage)({ key: "userInfo" })
   .catch(err => console.log(err))
 
 
-5. 生命在于折腾。吗
+## 生命在于折腾。吗
 
 出发点：
--- 我想要用async/await简化我的代码
+我想要用async/await简化我的代码
 
 编译工具及方案：
--- 微信开发工具的ES6转ES5的编译选项不满足需求 => 
--- 自己编译 =>
--- 只需要编译js 其他的鬼文件(比如wxss wxml这些后缀的)交回给微信开发工具来操作 =>
--- gulp应该是最简选择
+微信开发工具的ES6转ES5的编译选项不满足需求 => 
+自己编译 =>
+只需要编译js 其他的鬼文件(比如wxss wxml这些后缀的)交回给微信开发工具来操作 =>
+gulp应该是最简选择
 
 主要报错信息：Uncaught ReferenceError: regeneratorRuntime is not defined
--- 考虑引入babel-polyfill =>
--- 【Usage in Node / Browserify / Webpack】=>
--- To include the polyfill you need to require it at the top of the entry point to your application.
--- 【Usage in Browser】=>
--- Available from the dist/polyfill.js file within a babel-polyfill npm release. This needs to be included before all your compiled Babel code.
--- You can either prepend it to your compiled code or include it in a <script> before it.
+考虑引入babel-polyfill =>
+【Usage in Node / Browserify / Webpack】=>
+To include the polyfill you need to require it at the top of the entry point to your application.
+【Usage in Browser】=>
+Available from the dist/polyfill.js file within a babel-polyfill npm release. This needs to be included before all your compiled Babel code.
+You can either prepend it to your compiled code or include it in a `<script>` before it.
 这里其实踩了很久坑，一直在查babelrc配置是否有问题/需要加其他依赖，最后发现是和引入promise时同样的问题：
 引入的polyfill.js中存在document/window等小程序环境中不存在的对象。
 最后是引入非死不可的regenerator库解决问题的。（踩在巨人的肩膀上）
- 
+```
 .babelrc配置：
 {
   "presets": [
@@ -157,9 +156,9 @@ T.wxPromise(wx.getStorage)({ key: "userInfo" })
     }]
   ]
 }
-
+```
 gulpfile配置：
--- ...
+...
 gulp.task('build:js', done =>
   gulp.src('src/**/*.js')
     .pipe(babel())
@@ -169,12 +168,12 @@ gulp.task('build:others', done =>
   gulp.src(['src/**/*.*', '!src/**/*.js'])
     .pipe(gulp.dest('dist'))
 )
--- ...
+...
 
 
-6. 给你们看看美丽的登录代码
+## 给你们看看美丽的登录代码
 
--- 截取自app.js
+截取自app.js
   async Login () {
     let login, infor, dolog;
     try {
@@ -191,51 +190,51 @@ gulp.task('build:others', done =>
   }
 
 
-7. 上帝不会放过你
+## 上帝不会放过你
 
--- 第一版小程序发布啦 解脱啦 我会用小程序啦
--- 兼职推广的学生 他iPhone5没反应啊
--- 怎么想都是他手机太烂了
--- 可是司机的手机也不会好到哪去
--- emmmmmmm ... 嘻嘻
-
-困难：
--- 小程序的调试难点在于不同手机中表现形式也很狂放 线上环境没办法调试 开发环境真机调试代码不方便
-排查：
--- iPhone5在开发模式下 正常触发启动逻辑(app.js)和主页面(index.js)的生命周期方法
--- 但登录逻辑未正常执行 未报错 导致数据缺失 无法通过进入系统的逻辑判断
--- 尝试添加console在真机追踪代码执行 发现有执行await 后面的代码 但是await没有返回值
-猜测：
--- 有些老手机不支持await编译后的代码！？ 编译后你都不支持 那我能怎么办！？！？
-手段：
--- 绝望的灵机一动 使用TJ大佬的Co模块代替await/async语法糖，初次尝试发现yield 后执行完有返回 看起来解决了发现的await没有返回的问题
+第一版小程序发布啦 解脱啦 我会用小程序啦
+兼职推广的学生 他iPhone5没反应啊
+怎么想都是他手机太烂了
+可是司机的手机也不会好到哪去
+emmmmmmm ... 嘻嘻
 
 困难：
--- 替换过程中 发现有些地方还是不能正常执行 表现形式跟iPhone5的bug一样
+小程序的调试难点在于不同手机中表现形式也很狂放 线上环境没办法调试 开发环境真机调试代码不方便
 排查：
--- co使用不够了解。阮兔哥es6教程中截取以下两句：
--- 【1】co模块约定，yield命令后面只能是 Thunk 函数或 Promise 对象，而async函数的await命令后面，可以是Promise 对象和原始类型的值
--- 【2】async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作
--- 查阅co repo，这些都可以找到答案：
--- 【1】The yieldable objects currently supported are: promises; thunks; array; objects; generators; generator functions.
--- 【2】Returns a promise that resolves a generator, generator function, or any function that returns a generator.
--- 所以还是不要过度依赖教程 有官方repo去查阅官方文档
+iPhone5在开发模式下 正常触发启动逻辑(app.js)和主页面(index.js)的生命周期方法
+但登录逻辑未正常执行 未报错 导致数据缺失 无法通过进入系统的逻辑判断
+尝试添加console在真机追踪代码执行 发现有执行await 后面的代码 但是await没有返回值
 猜测：
--- co一层是没有问题的（这也是最初改用co的原因）=> 嵌套两层co可能就会有问题。验证co一层 co两层 发现后者确实没有响应。
--- 这时候感觉到和await的bug是一样的 返回类型都为promise co两层的时候 就出现问题（使用await的时候 没有排查出是两层会有问题）
--- 且编译后代码 即便是使用yield关键字 也依赖了regenerator第三方库来支持 所以他们也是在相同的依赖环境
--- 在开发工具中打印返回值Promise为native code，并没有使用到第三方引用的Promise
--- 考虑我们封装的wxPromise等方法使用了第三方promise，但async函数返回的promise不是我们第三方引用的Promise对象 这个如何控制？
+有些老手机不支持await编译后的代码！？ 编译后你都不支持 那我能怎么办！？！？
 手段：
--- 在黄志大佬的永不放弃的精神中，最后发现了regenerator第三方库编译后代码中存在new Promise的关键词
--- 于是我们在使用regenerator前 也引入一次第三方Promise 得以保证在不同手机环境下 都能正常使用Promise
+绝望的灵机一动 使用TJ大佬的Co模块代替await/async语法糖，初次尝试发现yield 后执行完有返回 看起来解决了发现的await没有返回的问题
+
+困难：
+替换过程中 发现有些地方还是不能正常执行 表现形式跟iPhone5的bug一样
+排查：
+co使用不够了解。阮兔哥es6教程中截取以下两句：
+【1】co模块约定，yield命令后面只能是 Thunk 函数或 Promise 对象，而async函数的await命令后面，可以是Promise 对象和原始类型的值
+【2】async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作
+查阅co repo，这些都可以找到答案：
+【1】The yieldable objects currently supported are: promises; thunks; array; objects; generators; generator functions.
+【2】Returns a promise that resolves a generator, generator function, or any function that returns a generator.
+所以还是不要过度依赖教程 有官方repo去查阅官方文档
+猜测：
+co一层是没有问题的（这也是最初改用co的原因）=> 嵌套两层co可能就会有问题。验证co一层 co两层 发现后者确实没有响应。
+这时候感觉到和await的bug是一样的 返回类型都为promise co两层的时候 就出现问题（使用await的时候 没有排查出是两层会有问题）
+且编译后代码 即便是使用yield关键字 也依赖了regenerator第三方库来支持 所以他们也是在相同的依赖环境
+在开发工具中打印返回值Promise为native code，并没有使用到第三方引用的Promise
+考虑我们封装的wxPromise等方法使用了第三方promise，但async函数返回的promise不是我们第三方引用的Promise对象 这个如何控制？
+手段：
+在黄志大佬的永不放弃的精神中，最后发现了regenerator第三方库编译后代码中存在new Promise的关键词
+于是我们在使用regenerator前 也引入一次第三方Promise 得以保证在不同手机环境下 都能正常使用Promise
 
 
-8. 实际项目目录：
+## 实际项目目录：
 
-# 在开发者工具中 开发目录不能选择miniProgram，一定要选择miniProgram/dist目录 否则会报错
-# 至于为什么 请回到第一步看小程序的开发目录的结构要求
- 
+在开发者工具中 开发目录不能选择miniProgram，一定要选择miniProgram/dist目录 否则会报错
+至于为什么 请回到第一步看小程序的开发目录的结构要求
+```
 miniProgram/
 ├─ app.wxss
 ├─ app.json
@@ -273,9 +272,9 @@ miniProgram/
 │   │     └── ...
 │   ├── fonts
 │   │     └── ...
+```
 
-
-9. 写一篇1000字总结痛斥小狗屎程序
+## 写一篇1000字总结痛斥小狗屎程序
 
 其实这第一部分的尿点主要是自找的，如果你对代码的可读性没有太大要求，不需要使用promise，async等语法，使用callback完全可以满足业务需求并快速开发，那么完全不需要自己去编译 分成开发&生产目录，也不需要苦等每次保存的时候 慢吞吞的编译 开发工具卡卡的反应。
 
@@ -286,20 +285,8 @@ miniProgram/
 这些问题，基本是通过检查编译后代码，以及第三方库源码，来找到解决方案的。现在看似很简单，问题都很统一，但是我却是一再的踩进坑里无法自拔。前期考虑过是否使用wepy框架：wepy解决了编译方面的痛点，以及支持组件化开发，而且类vue的写法，可以说是比较符合开发者需求了。但是我认为，我不需要为了小程序框架引入小程序框架的框架，我只需要解决一些语法上的支持问题，如果需要封装API之类的，直接自己写就好了，wepy非常的奶妈了。我对小程序的API不熟悉，还要花一些精力去学习wepy，就没什么必要。但事实证明，我正常使用上所谓语法上的时间，可能比上手wepy需要的时间，还要久，而且我还不知道，还有没有其他兼容问题，哈哈哈哈哈fuck myself。不过应该是没有了 我猜的。之后如果确实有需要的话，也可以用wepy重写，但是我想我不会这么无聊的。
 
 
-
-10. 查阅
-
-在小程序使用promise/async的方法
-
-babel的配置
-
-Co文档查阅
-
-类vue开发的wepy
-
-二、逻辑层踩进的坑
+## 逻辑层踩进的坑
 前言：不要想当然的以自己拥有的常识去认为小程序的这个那个的API按常理应该是怎么用的，你的常识算个猫。
-
 
 
 1、wx.chooseImage(OBJECT)  从本地相册选择图片或使用相机拍照。

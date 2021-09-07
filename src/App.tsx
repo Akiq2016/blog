@@ -1,8 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import logo from "./logo.svg";
+
+import "./App.css";
+import { a } from "@aki";
 
 function App() {
+  console.log(a);
   return (
     <div className="App">
       <header className="App-header">

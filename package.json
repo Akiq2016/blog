@@ -82,7 +82,37 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "import"
+    ],
+    "rules": {
+      "import/order": [
+        "error",
+        {
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc"
+          },
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "@aki",
+              "group": "internal",
+              "position": "after"
+            }
+          ]
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [

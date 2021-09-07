@@ -738,6 +738,7 @@ module.exports = function (webpackEnv) {
               }),
             },
           },
+          fix: isEnvDevelopment,
         }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.

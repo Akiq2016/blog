@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-25T15:04:35.784Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="QeHTraU5jusCuLpHR_w0" version="18.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-25T15:06:47.359Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="OdBC7fmuYRz-ixcnGBkx" version="18.1.2" type="github">
   <diagram id="RV7YtuFCGykb4c15_Kpe" name="Page-1">
     <mxGraphModel dx="2460" dy="2148" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -26,7 +26,7 @@
             <mxPoint x="490" y="320" as="targetPoint" />
             <Array as="points">
               <mxPoint x="430" y="10" />
-              <mxPoint x="690" y="10" />
+              <mxPoint x="780" y="10" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -86,13 +86,13 @@
         <mxCell id="Kba8Ch7E65jF9t8C24CI-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-4" target="Kba8Ch7E65jF9t8C24CI-29">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="690" y="210" />
+              <mxPoint x="780" y="210" />
               <mxPoint x="870" y="210" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-4" value="storage" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="70" width="120" height="60" as="geometry" />
+          <mxGeometry x="720" y="70" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-5" target="Kba8Ch7E65jF9t8C24CI-31">
           <mxGeometry relative="1" as="geometry" />
@@ -107,7 +107,7 @@
           <mxGeometry x="990" y="70" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-13" value="Amazon Elastic Compute Cloud" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-60" y="290" width="120" height="40" as="geometry" />
+          <mxGeometry x="-60" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-17" target="Kba8Ch7E65jF9t8C24CI-20">
           <mxGeometry relative="1" as="geometry" />
@@ -122,10 +122,10 @@
           <mxGeometry x="-350" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-20" value="Amazon Elastic Container Service" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-200" y="390" width="120" height="60" as="geometry" />
+          <mxGeometry x="-200" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-22" value="AWS Lambda" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="-350" y="390" width="120" height="60" as="geometry" />
+          <mxGeometry x="-350" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-25" value="Amazon Virtual Private Cloud" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="290" width="120" height="60" as="geometry" />
@@ -137,10 +137,10 @@
           <mxGeometry x="810" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-31" value="Amazon Relational Database Service" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="310" y="290" width="120" height="60" as="geometry" />
+          <mxGeometry x="294" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Kba8Ch7E65jF9t8C24CI-33" value="Amazon DynamoDB" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="433" y="290" width="120" height="60" as="geometry" />
+          <mxGeometry x="450" y="290" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

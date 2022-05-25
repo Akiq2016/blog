@@ -1,1 +1,148 @@
-<mxfile host="app.diagrams.net" modified="2022-05-24T13:45:43.162Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" version="18.1.2" etag="L_rE1iB7OikuYV49mJQm" type="github"><diagram id="RV7YtuFCGykb4c15_Kpe">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-05-25T15:04:35.784Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="QeHTraU5jusCuLpHR_w0" version="18.1.2" type="github">
+  <diagram id="RV7YtuFCGykb4c15_Kpe" name="Page-1">
+    <mxGraphModel dx="2460" dy="2148" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.433;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-1" target="Kba8Ch7E65jF9t8C24CI-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="10" />
+              <mxPoint x="-148" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-1" target="Kba8Ch7E65jF9t8C24CI-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="10" />
+              <mxPoint x="160" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-1" target="Kba8Ch7E65jF9t8C24CI-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="10" />
+              <mxPoint x="690" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-1" target="Kba8Ch7E65jF9t8C24CI-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="10" />
+              <mxPoint x="431" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-1" target="Kba8Ch7E65jF9t8C24CI-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="10" />
+              <mxPoint x="1050" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-1" value="AWS services" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="371.5" y="-90" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-2" target="Kba8Ch7E65jF9t8C24CI-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-30" y="670" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-140" y="210" />
+              <mxPoint y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-2" target="Kba8Ch7E65jF9t8C24CI-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-2" target="Kba8Ch7E65jF9t8C24CI-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-140" y="210" />
+              <mxPoint x="-280" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-2" value="compute" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-3" target="Kba8Ch7E65jF9t8C24CI-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-3" value="networking" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-4" target="Kba8Ch7E65jF9t8C24CI-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-4" target="Kba8Ch7E65jF9t8C24CI-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="210" />
+              <mxPoint x="870" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-4" value="storage" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-5" target="Kba8Ch7E65jF9t8C24CI-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-5" target="Kba8Ch7E65jF9t8C24CI-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-5" value="databases" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="371.5" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-6" value="security" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="990" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-13" value="Amazon Elastic Compute Cloud" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="290" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-17" target="Kba8Ch7E65jF9t8C24CI-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-17" value="AWS container services" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Kba8Ch7E65jF9t8C24CI-18" target="Kba8Ch7E65jF9t8C24CI-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-18" value="serverless compute" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-20" value="Amazon Elastic Container Service" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-22" value="AWS Lambda" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-350" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-25" value="Amazon Virtual Private Cloud" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-27" value="Amazon S3" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-29" value="Amazon Elastic Block Store" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-31" value="Amazon Relational Database Service" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kba8Ch7E65jF9t8C24CI-33" value="Amazon DynamoDB" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="433" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
